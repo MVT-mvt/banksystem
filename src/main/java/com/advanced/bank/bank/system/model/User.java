@@ -2,6 +2,7 @@ package com.advanced.bank.bank.system.model;
 
 import com.advanced.bank.bank.system.model.enums.UserType;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -11,22 +12,109 @@ public class User {
 
     private UserType userType;
 
-    private Set<Object> accounts;
+    private Set<Account> accounts = new HashSet<>();
 
-    String firstName;
+    private String firstName;
 
-    String lastname;
+    private String lastName;
 
-    String egn;
+    private  String egn;
 
-    String mobileNumber;
+    private String mobileNumber;
 
-    List<Object> addresses;
+    private Set<Address> addresses = new HashSet<>();;
 
-    String email;
+    private String email;
 
     private String password;
 
+    private Set<UserSubscription> userSubscriptions = new HashSet<>();
 
+    public Long getId() {
+        return id;
+    }
 
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public Set<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(Set<Account> accounts) {
+        this.accounts = accounts;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEgn() {
+        return egn;
+    }
+
+    public void setEgn(String egn) {
+        this.egn = egn;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public Set<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(Set<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Set<UserSubscription> getUserSubscriptions() {
+        return userSubscriptions;
+    }
+
+    public void setUserSubscriptions(Set<UserSubscription> userSubscriptions) {
+        this.userSubscriptions = userSubscriptions;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
