@@ -3,21 +3,35 @@ package com.advanced.bank.bank.system.controller;
 import com.advanced.bank.bank.system.model.User;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/users")
 
 public class UserController {
 
     @PostMapping
-    public String createUser(@RequestBody User user){
-       // throw new RuntimeException("");
-        return "Hello" . concat(user.getFirstName());
+    public void createUser(@RequestBody User user){
+
     }
 
-    @GetMapping ("/test")
+    @GetMapping
+    public List<User>getUsers(){
+        return null;
+    }
 
+    @GetMapping ("/{userId}")
+    public List<User> getUser(@PathVariable ("userId") Long userId) {
+        return null;
+    }
 
-    private String test () {
-        return "Hello World";
+    @DeleteMapping("/userId")
+    public void deleteUser (@PathVariable("userId") Long userId ){
+
+    }
+
+    @PutMapping("/{userId}")
+    public void updateUser (@RequestBody  User user)  {
+
     }
 }
