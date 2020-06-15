@@ -13,7 +13,7 @@ public class CityController {
     public void createCity(@RequestBody City city){
 
     }
-    @PostMapping
+    @PutMapping
     public void updateCity(@RequestBody City city){
 
     }
