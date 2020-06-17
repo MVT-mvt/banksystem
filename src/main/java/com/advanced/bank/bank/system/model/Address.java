@@ -1,10 +1,20 @@
 package com.advanced.bank.bank.system.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table (name = "addresses")
 public class Address {
+
+    @Id
     private Long id;
+    @Column
     private String street;
+    @ManyToOne
+    @Column
     private City city;
-    private Integer homeNumber;
+    @Column
+    private String homeNumber;
 
 
     public Long getId() {
@@ -27,11 +37,11 @@ public class Address {
         this.city = city;
     }
 
-    public Integer getHomeNumber() {
+    public String getHomeNumber() {
         return homeNumber;
     }
 
-    public void setHomeNumber(Integer homeNumber) {
+    public void setHomeNumber(String homeNumber) {
         this.homeNumber = homeNumber;
     }
 

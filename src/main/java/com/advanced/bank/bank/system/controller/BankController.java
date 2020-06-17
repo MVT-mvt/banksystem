@@ -25,8 +25,8 @@ public class BankController {
         return null;
     }
 
-    @GetMapping
-    public  Bank getBank (){
+    @GetMapping("/{bankId}")
+    public  Bank getBank (@PathVariable  Long bankId){
         return null;
     }
     @DeleteMapping ("/{bankId}")

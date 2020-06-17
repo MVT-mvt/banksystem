@@ -42,7 +42,17 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-	</dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-hibernate -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.17.Final</version>
+		</dependency>
+
+    </dependencies>
 
 	<build>
 		<plugins>

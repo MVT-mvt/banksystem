@@ -6,16 +6,34 @@ import java.time.Instant;
 
 import com.advanced.bank.bank.system.model.enums.TransactionStatus;
 
+import javax.persistence.*;
+
+@Entity
+@Table (name = "transactions")
 public class Transaction {
+
+    @Id
     private Long id;
+    @ManyToOne
+    @JoinColumn(name = "sender_id")
     private Account sender;
+    @ManyToOne
+    @JoinColumn(name = "receiver_id")
     private Account receiver;
+    @Column
     private String description;
+    @Column(name ="date_created")
     private Instant dateCreated;
+    @Column(name = "date_completed")
     private Instant dateCompeted;
+    @Column(name = "date_updated")
     private Instant dateUpdated;
+    @Column
+    @Enumerated(EnumType.STRING)
     private TransactionStatus transactionStatus = TransactionStatus.NEW;
+    @Column
     private Long fee;
+    @Column
     private Long amount;
 
     public Long getId() {

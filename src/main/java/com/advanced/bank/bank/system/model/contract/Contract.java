@@ -2,11 +2,21 @@ package com.advanced.bank.bank.system.model.contract;
 
 import com.advanced.bank.bank.system.model.Account;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.Instant;
 
+@Entity
+@Table (name = " contracts")
 public class Contract {
+
+    @Id
     private Long id;
+    @Column
     private Account account;
+
     private Instant expiresOn;
     private Instant dateCreated;
     private ContractDetails contractDetails;

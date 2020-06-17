@@ -2,17 +2,30 @@ package com.advanced.bank.bank.system.model;
 
 import com.advanced.bank.bank.system.model.enums.CardType;
 
+import javax.persistence.*;
 import java.time.Instant;
 import java.util.HashSet;
 
+@Entity
+@Table(name = " physical_cards")
 public class PhysicalCard {
+
+    @Id
     private Long id;
+    @Column
     private Integer cardNumber;
+    @Enumerated (EnumType.STRING)
     private CardType cardType = CardType.NONE;
+    @Column
     private Instant expirationDate;
+    @Column
     private Integer cvv;
+    @Column
     private Integer pin;
+    @ManyToOne
+    @JoinColumn(name = "account_id")
     private Account account;
+    @Column
     boolean isActive = false;
 
     public Long getId() {

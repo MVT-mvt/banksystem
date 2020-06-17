@@ -22,8 +22,8 @@ public class ContractController {
     public List<Contract>getAllContracts(){
         return null;
     }
-    @GetMapping
-    public Contract getContract (@PathVariable Long ContractId){
+    @GetMapping("/{contractId}")
+    public Contract getContract (@PathVariable Long contractId){
         return null;
     }
     @DeleteMapping
