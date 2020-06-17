@@ -2,10 +2,7 @@ package com.advanced.bank.bank.system.model.contract;
 
 import com.advanced.bank.bank.system.model.Account;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
@@ -14,11 +11,15 @@ public class Contract {
 
     @Id
     private Long id;
-    @Column
+    @ManyToOne
+    @JoinColumn(name = "account_id")
     private Account account;
-
+    @Column(name = "expires_on")
     private Instant expiresOn;
+    @Column (name = "date_created")
     private Instant dateCreated;
+    @ManyToOne
+    @JoinColumn(name = " contract_details_id")
     private ContractDetails contractDetails;
 
     public Long getId() {
