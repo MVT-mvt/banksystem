@@ -1,13 +1,23 @@
 server:
   port: 8080
+
 spring:
+
   datasource:
     url: jdbc:postgresql://localhost:5432/bank_system
     username: postgres
     password: admin
-jpa:
-  ddl-auto: create
-  show_sql: true
-  format_sql: true
+    hikari:
+      maximumPoolSize: 15
+  jpa:
+    hibernate:
+      temp:
+        use_jbdc_metadata_defaults: false
+      jdbc:
+        time_zone: UTC
+      show_sql: true
+      format_sql: true
+      hbm2ddl:
+        auto: update
   database-platform: org.hibernate.dialect.PostgreSQL94Dialect
 
