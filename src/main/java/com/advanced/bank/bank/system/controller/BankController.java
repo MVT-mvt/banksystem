@@ -1,6 +1,8 @@
 package com.advanced.bank.bank.system.controller;
 
 import com.advanced.bank.bank.system.model.Bank;
+import com.advanced.bank.bank.system.service.BankService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,8 +12,16 @@ import java.util.List;
 @RequestMapping ("api/banks")
 public class BankController {
 
+    private final BankService bankService;
+
+    @Autowired
+    public BankController(BankService bankService) {
+        this.bankService = bankService;
+    }
+
     @PostMapping
     public void createBank (@RequestBody Bank bank){
+        bankService.createBank(bank);
 
     }
 
