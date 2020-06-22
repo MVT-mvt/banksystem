@@ -20,6 +20,11 @@ public class BankServiceImpl implements  BankService{
 
     @Override
     public void createBank(Bank bank) {
+
+        if (null != bank.getAddress()){
+
+        }
+        if ( null == )
         bankRepository.save(bank);
 
     }
@@ -43,4 +48,5 @@ public class BankServiceImpl implements  BankService{
     public void deleteBankById(Long bankId) {
 
     }
+    private void validateBank ()
 }

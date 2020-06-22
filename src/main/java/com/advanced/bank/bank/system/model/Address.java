@@ -7,10 +7,11 @@ import javax.persistence.*;
 public class Address {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
     private String street;
-    @ManyToOne
+    @ManyToOne (cascade = {CascadeType.ALL})
     @JoinColumn(name = "city_id")
     private City city;
     @Column

@@ -10,7 +10,7 @@ public class Bank {
     private Long id;
     @Column
     private String name;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "address_id")
     private Address address;
     @Column (name = "swift_number")
