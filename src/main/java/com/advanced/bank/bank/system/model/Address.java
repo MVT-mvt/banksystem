@@ -11,7 +11,7 @@ public class Address {
     @Column
     private String street;
     @ManyToOne
-    @Column
+    @JoinColumn(name = "city_id")
     private City city;
     @Column
     private String homeNumber;

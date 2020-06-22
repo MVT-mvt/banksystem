@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
-@Table (name = " contracts")
+@Table (name = "contracts")
 public class Contract {
 
     @Id
@@ -19,7 +19,7 @@ public class Contract {
     @Column (name = "date_created")
     private Instant dateCreated;
     @ManyToOne
-    @JoinColumn(name = " contract_details_id")
+    @JoinColumn(name = "contract_details_id")
     private ContractDetails contractDetails;
 
     public Long getId() {

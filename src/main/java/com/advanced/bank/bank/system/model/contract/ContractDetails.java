@@ -15,7 +15,7 @@ public class ContractDetails {
     private static final ObjectMapper mapper = new ObjectMapper();
 
 
-    @Column
+    @Id
     private Long id;
     @Column
     private BigDecimal interest;
